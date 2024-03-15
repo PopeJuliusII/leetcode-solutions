@@ -30,7 +30,7 @@ def solution_1(s: str) -> int:
     ans = 0
     for i, char in enumerate(s):
         # Subtract the value of the current character if it is less than the next character.
-        if i < len(s) and conv_dict[char] < conv_dict[s[i + 1]]:
+        if i < len(s) - 1 and conv_dict[char] < conv_dict[s[i + 1]]:
             ans -= conv_dict[char]
         # Otherwise, add the value of the current character.
         else:
