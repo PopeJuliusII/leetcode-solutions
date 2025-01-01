@@ -22,7 +22,6 @@ def solution_1(s: str, shift: List[List[int]]) -> str:
     Returns:
         str: The string after performing all the shifts.
     """
-
     # Calculate the total shift. Shifting to the left is subtracting the amount,
     # and shifting to the right is adding the amount. The modulo operation is used
     # to handle cases where the total shift is greater than the length of the string.
