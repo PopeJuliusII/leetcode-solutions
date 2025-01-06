@@ -16,3 +16,13 @@ def solution_1(boxes: str) -> List[int]:
         List[int]: A list of integers representing the minimum number of operations
             to move all balls to each box. The ith integer represents the ith box.
     """
+    answer, ones = [], 0
+    for b in boxes:
+        answer.append((answer[-1] if answer else 0) + ones)
+        ones += int(b)
+    prev = ones = 0
+    for i, b in enumerate(reversed(boxes)):
+        answer[~i] += prev + ones
+        prev += ones
+        ones += int(b)
+    return answer
